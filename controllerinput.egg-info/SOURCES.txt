@@ -1,9 +1,0 @@
-LICENSE
-README.md
-pyproject.toml
-setup.py
-controllerinput.egg-info/PKG-INFO
-controllerinput.egg-info/SOURCES.txt
-controllerinput.egg-info/dependency_links.txt
-controllerinput.egg-info/requires.txt
-controllerinput.egg-info/top_level.txt
