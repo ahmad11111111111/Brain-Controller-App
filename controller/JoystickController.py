@@ -1,4 +1,8 @@
 
+
+import pygame
+import multiprocessing
+import time
 class JoystickController:
     def __init__(self):
         pygame.init()
@@ -22,8 +26,13 @@ class JoystickController:
                 connected_joysticks.append(joystick)
         return connected_joysticks
 
-    def update(self):
-        while not self.terminate_event.is_set():  # Exit when termination event is set
+    def update(self, sampling_frequency=10):
+        # Calculate the time interval between updates based on the sampling frequency
+        update_interval = 1.0 / sampling_frequency
+
+        while not self.terminate_event.is_set():
+            start_time = time.time()
+
             joystick_data_list = []
             connected_joysticks = self.check_joystick_connection()
             
@@ -46,14 +55,17 @@ class JoystickController:
                     "buttons": buttons
                 }
                 joystick_data_list.append(joystick_data)
-           # pygame.quit()
-
             # Put the data into the queue
             self.data_queue.put(joystick_data_list)
-           # print("Data put into the queue:", joystick_data_list)
-            time.sleep(0.1)   
-    def start_update_process(self):
-        self.process = multiprocessing.Process(target=self.update)
+
+            elapsed_time = time.time() - start_time
+
+            # Sleep to maintain the desired update frequency
+            if elapsed_time < update_interval:
+                time.sleep(update_interval - elapsed_time)
+
+    def start_update_process(self, sampling_frequency=10):
+        self.process = multiprocessing.Process(target=self.update, args=(sampling_frequency,))
         self.process.start()
 
     def get_data(self):
