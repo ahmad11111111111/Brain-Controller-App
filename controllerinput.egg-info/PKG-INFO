@@ -9,4 +9,3 @@ Requires-Dist: pandas
 Requires-Dist: py4j
 Requires-Dist: pyserial
 Requires-Dist: scipy
-Requires-Dist: nexus@ git+https://github.com/umnil/device-nexus.git

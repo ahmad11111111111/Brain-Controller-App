@@ -3,4 +3,3 @@ pandas
 py4j
 pyserial
 scipy
-nexus@ git+https://github.com/umnil/device-nexus.git
