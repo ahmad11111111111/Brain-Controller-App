@@ -1,5 +1,0 @@
-numpy
-pandas
-py4j
-pyserial
-scipy
