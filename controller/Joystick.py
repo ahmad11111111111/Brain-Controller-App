@@ -1,8 +1,7 @@
 import json
-class Joystick:
-    def __init__(self, joystick_controller,InputDevice):
+class Joystick(InputDevice):
+    def __init__(self, joystick_controller):
         self.joystick_controller = joystick_controller
-
     def get_input(self):
         data = self.joystick_controller.get_data()
 
