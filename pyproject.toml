@@ -13,7 +13,7 @@ dependencies = [
     "py4j",
     "pyserial",
     "scipy",
-    "nexus @ git+https://github.com/umnil/device-nexus.git"
+    #"nexus @ git+https://github.com/umnil/device-nexus.git"
 ]
 
 [tools.setuptools.packages.find]
