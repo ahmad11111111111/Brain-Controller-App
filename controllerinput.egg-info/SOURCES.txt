@@ -2,6 +2,9 @@ LICENSE
 README.md
 pyproject.toml
 setup.py
+controller/JoystickController.py
+controller/controler_inputs.ipynb
+controller/.ipynb_checkpoints/controler_inputs-checkpoint.ipynb
 controllerinput.egg-info/PKG-INFO
 controllerinput.egg-info/SOURCES.txt
 controllerinput.egg-info/dependency_links.txt
