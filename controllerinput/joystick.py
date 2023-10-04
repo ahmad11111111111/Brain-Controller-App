@@ -1,5 +1,6 @@
 import json
 from .joystick_controller import JoystickController
+from libbci import InputDevice
 
 
 class Joystick(InputDevice):
