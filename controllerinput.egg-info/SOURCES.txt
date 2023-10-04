@@ -5,8 +5,11 @@ setup.py
 controller/Joystick.py
 controller/JoystickController.py
 controller/controler_inputs.ipynb
+controller/example1.ipynb
 controller/joysticknotebook.ipynb
 controller/.ipynb_checkpoints/controler_inputs-checkpoint.ipynb
+controller/__pycache__/Joystick.cpython-311.pyc
+controller/__pycache__/JoystickController.cpython-311.pyc
 controllerinput.egg-info/PKG-INFO
 controllerinput.egg-info/SOURCES.txt
 controllerinput.egg-info/dependency_links.txt
