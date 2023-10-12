@@ -12,7 +12,7 @@ class Joystick(InputDevice):
     def get_input(self):
         data = self.joystick_controller.get_data()
 
-        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        timestamp = datetime.datetime.now().strftime("%H:%M:%S")
 
         filename = datetime.datetime.now().strftime("%Y-%m-%d") + ".csv"
 
