@@ -1,7 +1,7 @@
 import csv
 import datetime
 from controllerinput import joystick_controller
-
+from libbci.inputdevice import InputDevice
 
 # ... (other imports and class definitions)
 
