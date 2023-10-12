@@ -1,7 +1,7 @@
-import json
-from .joystick_controller import JoystickController
-from libbci import InputDevice
+import csv
+import datetime
 
+# ... (other imports and class definitions)
 
 class Joystick(InputDevice):
 
@@ -12,10 +12,22 @@ class Joystick(InputDevice):
     def get_input(self):
         data = self.joystick_controller.get_data()
 
-        # Write data to a file with newline-separated JSON format
-        filename = "joystick_data.txt"
-        with open(filename, "a") as file:
+        timestamp = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+
+        filename = datetime.datetime.now().strftime("%Y-%m-%d") + ".csv"
+
+        with open(filename, "a", newline='') as csvfile:
+            fieldnames = ['Timestamp', 'Joystick Output']
+            writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+            # Write a row for each instance of joystick data
             for instance in data:
-                json.dump(instance, file)
-                file.write('\n')  # Add a newline after each instance
+                writer.writerow({'Timestamp': timestamp, 'Joystick Output': json.dumps(instance)})
+
         return None  # Return None after writing the data
+
+
+
+
+#create a 2 colum csv file with one colum as the timestamp otherr joystick output.
+#have the filename be the date. 
