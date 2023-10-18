@@ -8,16 +8,9 @@ version = "0.1.0"
 description = "GameInput Python Controller"
 authors = [ { name = "Ahmad Al-Salem", email = "aasalem0222@gmail.com" } ]
 dependencies = [
-    "numpy",
-    "pandas",
-    "py4j",
-    "pyserial",
-    "scipy",
-    "nexus @ git+https://github.com/umnil/device-nexus.git"
+    "pygame",
+    "libbci@git+http://github.com/umnil/libbci.git"
 ]
 
-[tools.setuptools.packages.find]
-exclude = ["tests"]
-
-[tools.setuptools.package-data]
-nexus = ["data/*", "jar/*", "py4j/**/*"]
+[tool.setuptools.packages.find]
+exclude = ["notebooks"]
