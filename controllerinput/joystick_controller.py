@@ -12,6 +12,9 @@ class JoystickController:
         self.process = None
         self.terminate_event = multiprocessing.Event()  # Initialize the termination event
 
+    def __del__(self):
+        self.stop_update_process()
+
     def initialize_joysticks(self):
         num_joysticks = pygame.joystick.get_count()
         for i in range(num_joysticks):
