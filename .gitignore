@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+*.egg-info/
+*checkpoint*
+=======
 build/
 *egg*
 *checkpoints*
 *pycache*
+>>>>>>> cleanup
